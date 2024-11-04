@@ -4,33 +4,11 @@ import MovieCard from "../components/MovieCard";
 
 export default function MovieListPage(){
 
-    /* const [contador,setContador] = useState(0)
-    const [contador2,setContador2] = useState(10)
-    const [contador3, setContador3] = useState(contador)
-    const [textoBotao, setTextoBotao] = useState('Thiago') */
-
-    /* const handleClick = () => {
-        setContador((prev) => prev + 1)
-        console.log(contador);
-        
-    }
-
-    const handleClick2 = () => {
-        setContador2((prev) => prev - 1)
-        console.log(contador2);
-        
-    }
-
-    const handleClick3 = () => {
-        setContador(0)
-        console.log(contador3);
-        
-    }
 
 
-    const handleTexto = () => {
+    /* const handleTexto = () => {
         setTextoBotao(prev => prev === 'Thiago' ? 'Almada' : 'Thiago')
-    } */
+    }  */
     const [search, setsearch] = useState("")
     const [filmes, setFilmes] = useState([])
 

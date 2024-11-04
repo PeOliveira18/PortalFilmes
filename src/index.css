@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.active{
-  border-bottom: 2px solid white;
+@layer components {
+  .active{
+    border-bottom: 2px solid white;
+  }
+
+  .svg-carrosel{
+    margin-right: 20px;
+  }
+
+
+
 }

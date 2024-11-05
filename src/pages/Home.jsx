@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import CardContainer from "../components/CardContainer";
 import MovieCard from "../components/MovieCard";
-import movies from "../data/movies.json";
-import left from "../images/left.svg"
-import right from "../images/right.svg"
+
 
 export default function Home() {
     const [topMovies, setTopMovies] = useState([])
@@ -14,9 +12,9 @@ export default function Home() {
         try {
             const [respostaTopMovies, respostaUpcomingMovies, respostaTvSeries] = await Promise.all(
                 [
-                    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`),
-                    fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`),
-                    fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`)
+                    fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`),
+                    fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_UPCOMING}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`),
+                    fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_TV}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`)
                 ]
             )
 

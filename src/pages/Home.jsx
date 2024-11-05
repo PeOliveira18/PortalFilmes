@@ -35,15 +35,6 @@ export default function Home() {
         fetchMovies()
     }, [])
 
-    const handleLeftClick = (e) =>{
-        e.preventDefault()
-        carrosel.current.scrollLeft -= carrosel.current.offsetWidth        
-    }
-
-    const handleRightClick = (e) => {
-        e.preventDefault()
-        carrosel.current.scrollLeft += carrosel.current.offsetWidth
-    }
 
     return (
         <>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getMovieDetails } from "../api/getMovieDetails"
+import { getMovieDetails } from "../services/getMovieDetails"
 
 export default function MovieDetailPage(){
     const {id} = useParams()

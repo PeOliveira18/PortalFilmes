@@ -16,8 +16,7 @@ export default function CardContainer({ titulo, children }) {
     };
 
     return (
-        <>
-            <div className="max-w-full h-96 w-auto px-5 relative">
+            <div className="max-w-full w-auto px-5 relative">
                 <h1 className="mt-10">{titulo}</h1>
                 <div className="flex scrollbar-hide overflow-hidden" ref={carrosel}>
                     {children}
@@ -25,6 +24,5 @@ export default function CardContainer({ titulo, children }) {
                 <button onClick={handleRightClick} className="botoes-carrosel right-0"><img src={right} alt="Right" /></button>
                 <button onClick={handleLeftClick} className="botoes-carrosel left-0"><img src={left} alt="Left"/></button>
             </div>
-        </>
     )
 }

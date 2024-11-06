@@ -39,7 +39,6 @@ export default function Home() {
     return (
         <>
             <CardContainer titulo="Filmes Populares">
-                    <div className="flex">
                         {
                             topMovies
                                 // .filter(filme => (filme.ano_lancamento < 2000))
@@ -47,25 +46,20 @@ export default function Home() {
                                     <MovieCard key={filme.id} {...filme} />
                                 ))
                             }
-                    </div>
             </CardContainer>
             <CardContainer titulo="Filmes a caminho">
-                    <div className="flex">
                         {
                             upcomingMovies.map(filme => (
                                 <MovieCard key={filme.id} {...filme}/>
                             ))
                         }
-                    </div>
             </CardContainer>
             <CardContainer titulo="Series de TV">
-                    <div className="flex">
                         {
                             tvSeries.map(filme => (
                                 <MovieCard key={filme.id} {...filme}/>
                             ))
                         }
-                    </div>
             </CardContainer>
 
         </>

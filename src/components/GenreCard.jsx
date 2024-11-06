@@ -1,8 +1,7 @@
-export default function GenreCard() {
+export default function GenreCard({nome, onclick}) {
     return(
-        <>
-        <h1>Genre Card</h1>
-        {/* Modelo de card que será utilizado para os gêneros */}
-        </>
+        <div className="rounded-xl bg-teal-900 h-auto p-10 items-center justify-center flex  cursor-pointer max-w-72 w-full" onClick={onclick}>
+            <h1>{nome.name}</h1>
+        </div>
     )
 }

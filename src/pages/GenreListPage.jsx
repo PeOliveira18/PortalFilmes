@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import GenreCard from "../components/GenreCard"
+import MovieCard from "../components/MovieCard"
 
 export default function GenreListPage(){
   const [genre, setGenre] = useState([])
@@ -46,25 +48,25 @@ export default function GenreListPage(){
   }
 
     return(
-        <div className="grid grid-cols-4 mx-10 my-5 gap-x-10 gap-y-10">
+      <div className="flex flex-col items-center">
+        <button onClick={handleback}>Voltar</button>
+        <div className="sm:grid flex flex-col items-center lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 lg:px-5 my-5 gap-y-10 lg:gap-x-5 gap-x-16 w-full max-w-screen-xl">
           { showMovie ? (
             genre.map(nome => (
-              <div className="rounded-xl bg-teal-900 h-auto p-10 text-center items-center flex cursor-pointer" onClick={() => handleClickCard(nome.id)}>
-                <h1>{nome.name}</h1>
-              </div>
+              <GenreCard nome={nome} onclick={() => handleClickCard(nome.id)}/>
             ))
           ) : (
-            <div>
-              <button onClick={handleback}>Voltar</button>
-              {
-                movie.map(nome => (
-                  <h1>{nome.title}</h1>
-                ))
-              }
-              <button onClick={handleCarregarMais}>Carregar mais</button>
-            </div>
+          <>
+            {
+              movie.map(nome => (
+                <MovieCard key={nome.id} {...nome} className="flex-row" props={'items-center'}/>
+              ))
+            }
+          </>
           )
         }
         </div>
+        <button onClick={handleCarregarMais}>Carregar mais</button>
+      </div>  
     )
 }

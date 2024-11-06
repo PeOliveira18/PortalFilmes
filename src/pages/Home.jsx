@@ -43,7 +43,7 @@ export default function Home() {
                             topMovies
                                 // .filter(filme => (filme.ano_lancamento < 2000))
                                 .map(filme => (
-                                    <MovieCard key={filme.id} {...filme} />
+                                    <MovieCard key={filme.id} {...filme} props={'items-start'}/>
                                 ))
                             }
             </CardContainer>

@@ -62,7 +62,7 @@ export default function MovieListPage(){
                     movies
                     // .slice(6,10)
                     .map(filme => (
-                        <MovieCard key={filme.id} {...filme} />
+                        <MovieCard key={filme.id} {...filme} props={'items-start'}/>
                     ))
                     : 
                     <p>Filme nao encotrado</p>

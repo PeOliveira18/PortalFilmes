@@ -49,7 +49,7 @@ export default function GenreListPage(){
 
     return(
       <div className="flex flex-col items-center">
-        <button onClick={handleback}>Voltar</button>
+        <button onClick={handleback} className="px-5 py-2 mt-5 bg-violet-600 rounded-lg">Voltar</button>
         <div className="sm:grid flex flex-col items-center lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 lg:px-5 my-5 gap-y-10 lg:gap-x-5 gap-x-16 w-full max-w-screen-xl">
           { showMovie ? (
             genre.map(nome => (
@@ -59,14 +59,14 @@ export default function GenreListPage(){
           <>
             {
               movie.map(nome => (
-                <MovieCard key={nome.id} {...nome} className="flex-row" props={'items-center'}/>
+                <MovieCard key={nome.id} {...nome} className="" props={'items-start'}/>
               ))
             }
           </>
           )
         }
         </div>
-        <button onClick={handleCarregarMais}>Carregar mais</button>
+        <button onClick={handleCarregarMais} className="px-5 py-2 mb-12 bg-violet-600 rounded-lg">Carregar mais</button>
       </div>  
     )
 }

@@ -17,27 +17,28 @@ export default function MovieCard({ id, title, name, vote_average, poster_path, 
 
     const handleAssistido = () => {
         const updatedAssistidos = JSON.parse(localStorage.getItem('assistidos')) || [];
-        
-        if (!updatedAssistidos.includes(movieTitle)) {
-            updatedAssistidos.push({title: movieTitle, image: movieImage});
+    
+        if (!updatedAssistidos.some(item => item.title === movieTitle)) {
+            updatedAssistidos.push({ title: movieTitle, image: movieImage });
             setAssistido(updatedAssistidos);
             localStorage.setItem('assistidos', JSON.stringify(updatedAssistidos));
         } else {
             alert('Filme já adicionado à lista');
         }
     };
-
+    
     const handleAssistir = () => {
         const updatedAssistir = JSON.parse(localStorage.getItem('assistir')) || [];
-        
-        if (!updatedAssistir.includes(movieTitle)) {
-            updatedAssistir.push({title:movieTitle, image: movieImage});
+    
+        if (!updatedAssistir.some(item => item.title === movieTitle)) {
+            updatedAssistir.push({ title: movieTitle, image: movieImage });
             setAssistir(updatedAssistir);
             localStorage.setItem('assistir', JSON.stringify(updatedAssistir));
         } else {
             alert('Filme já adicionado à lista');
         }
     };
+    
 
     return (
         <div className="flex pr-10">

@@ -1,28 +1,21 @@
-[
     {
-        "acao": "#B22222",
+        "ação": "#B22222",
         "aventura": "#228B22",
-        "animacao": "#FFA500",
-        "comedia": "#FFD700",
+        "animação": "#FFA500",
+        "comédia": "#FFD700",
         "crime": "#2F4F4F",
-        "documentario": "#4682B4",
+        "documentário": "#4682B4",
         "drama": "#800000",
-        "familia": "#5F9EA0",
+        "família": "#5F9EA0",
         "fantasia": "#6A5ACD",
-        "historia": "#8B4513",
-        "terror": "#000000",
-        "musica": "#FF1493",
-        "misterio": "#4B0082",
+        "história": "#8B4513",
+        "terror": "#512920",
+        "música": "#FF1493",
+        "mistério": "#4B0082",
         "romance": "#FF69B4",
-        "ficcao_cientifica": "#1E90FF",
-        "cinema_tv": "#696969",
+        "ficção científica": "#1E90FF",
+        "cinema tv": "#696969",
         "thriller": "#800020",
         "guerra": "#556B2F",
-        "faroeste": "#D2B48C"
-
-
-
-        
-        
+        "faroeste": "#D2B48C" 
     }
-]

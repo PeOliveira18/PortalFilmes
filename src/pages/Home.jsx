@@ -27,7 +27,7 @@ export default function Home() {
             setTvSeries(tvSeriesData.results)
 
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
     }
 
@@ -39,27 +39,27 @@ export default function Home() {
     return (
         <>
             <CardContainer titulo="Filmes Populares">
-                        {
-                            topMovies
-                                // .filter(filme => (filme.ano_lancamento < 2000))
-                                .map(filme => (
-                                    <MovieCard key={filme.id} {...filme} props={'items-start'}/>
-                                ))
-                            }
+                {
+                    topMovies
+                        // .filter(filme => (filme.ano_lancamento < 2000))
+                        .map(filme => (
+                            <MovieCard key={filme.id} {...filme} props={'items-start'}/>
+                        ))
+                    }
             </CardContainer>
             <CardContainer titulo="Filmes a caminho">
-                        {
-                            upcomingMovies.map(filme => (
-                                <MovieCard key={filme.id} {...filme}/>
-                            ))
-                        }
+                {
+                    upcomingMovies.map(filme => (
+                        <MovieCard key={filme.id} {...filme}/>
+                    ))
+                }
             </CardContainer>
             <CardContainer titulo="Series de TV">
-                        {
-                            tvSeries.map(filme => (
-                                <MovieCard key={filme.id} {...filme}/>
-                            ))
-                        }
+                {
+                    tvSeries.map(filme => (
+                        <MovieCard key={filme.id} {...filme}/>
+                    ))
+                }
             </CardContainer>
 
         </>

@@ -3,41 +3,41 @@ import { Link } from "react-router-dom";
 
 export default function MovieCard({ id, title, name, vote_average, poster_path, props }) {
     
-    const [assistido, setAssistido] = useState([]);
-    const [assistir, setAssistir] = useState([]);
-    const movieTitle = title || name;
+    const [assistido, setAssistido] = useState([])
+    const [assistir, setAssistir] = useState([])
+    const movieTitle = title || name
     const movieImage = poster_path
 
     useEffect(() => {
-        const storageAssistido = JSON.parse(localStorage.getItem('assistidos')) || [];
-        const storageAssistir = JSON.parse(localStorage.getItem('assistir')) || [];
-        setAssistido(storageAssistido);
-        setAssistir(storageAssistir);
-    }, []);
+        const storageAssistido = JSON.parse(localStorage.getItem('assistidos')) || []
+        const storageAssistir = JSON.parse(localStorage.getItem('assistir')) || []
+        setAssistido(storageAssistido)
+        setAssistir(storageAssistir)
+    }, [])
 
     const handleAssistido = () => {
-        const updatedAssistidos = JSON.parse(localStorage.getItem('assistidos')) || [];
+        const updatedAssistidos = JSON.parse(localStorage.getItem('assistidos')) || []
     
         if (!updatedAssistidos.some(item => item.title === movieTitle)) {
-            updatedAssistidos.push({ title: movieTitle, image: movieImage });
-            setAssistido(updatedAssistidos);
-            localStorage.setItem('assistidos', JSON.stringify(updatedAssistidos));
+            updatedAssistidos.push({ title: movieTitle, image: movieImage })
+            setAssistido(updatedAssistidos)
+            localStorage.setItem('assistidos', JSON.stringify(updatedAssistidos))
         } else {
-            alert('Filme já adicionado à lista');
+            alert('Filme já adicionado à lista')
         }
-    };
+    }
     
     const handleAssistir = () => {
-        const updatedAssistir = JSON.parse(localStorage.getItem('assistir')) || [];
+        const updatedAssistir = JSON.parse(localStorage.getItem('assistir')) || []
     
         if (!updatedAssistir.some(item => item.title === movieTitle)) {
-            updatedAssistir.push({ title: movieTitle, image: movieImage });
-            setAssistir(updatedAssistir);
-            localStorage.setItem('assistir', JSON.stringify(updatedAssistir));
+            updatedAssistir.push({ title: movieTitle, image: movieImage })
+            setAssistir(updatedAssistir)
+            localStorage.setItem('assistir', JSON.stringify(updatedAssistir))
         } else {
-            alert('Filme já adicionado à lista');
+            alert('Filme já adicionado à lista')
         }
-    };
+    }
     
 
     return (
@@ -53,5 +53,5 @@ export default function MovieCard({ id, title, name, vote_average, poster_path, 
                 </div>
             </div>
         </div>
-    );
+    )
 }

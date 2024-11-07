@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
 function Account() {
-    const [assistir, setAssistir] = useState([]);
-    const [assistido, setAssistido] = useState([]);
+    const [assistir, setAssistir] = useState([])
+    const [assistido, setAssistido] = useState([])
 
     useEffect(() => {
-        const storedAssistir = JSON.parse(localStorage.getItem('assistir')) || [];
-        const storedAssistido = JSON.parse(localStorage.getItem('assistidos')) || [];
+        const storedAssistir = JSON.parse(localStorage.getItem('assistir')) || []
+        const storedAssistido = JSON.parse(localStorage.getItem('assistidos')) || []
         
-        setAssistir(storedAssistir);
-        setAssistido(storedAssistido);
-    }, []);
+        setAssistir(storedAssistir)
+        setAssistido(storedAssistido)
+    }, [])
 
     return (  
         <div className="grid sm:grid-cols-2 grid-cols-1  text-center mt-5">
@@ -38,7 +38,7 @@ function Account() {
                 </ul>
             </div>
         </div>
-    );
+    )
 }
 
 export default Account;

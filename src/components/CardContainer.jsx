@@ -6,14 +6,14 @@ export default function CardContainer({ titulo, children }) {
     const carrosel = useRef(null)
 
     const handleLeftClick = (e) => {
-        e.preventDefault();
-        carrosel.current.scrollLeft -= carrosel.current.offsetWidth;
-    };
+        e.preventDefault()
+        carrosel.current.scrollLeft -= carrosel.current.offsetWidth
+    }
 
     const handleRightClick = (e) => {
-        e.preventDefault();
-        carrosel.current.scrollLeft += carrosel.current.offsetWidth;
-    };
+        e.preventDefault()
+        carrosel.current.scrollLeft += carrosel.current.offsetWidth
+    }
 
     return (
             <div className="max-w-full w-auto px-5 relative">

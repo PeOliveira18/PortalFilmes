@@ -27,7 +27,7 @@ export default function MovieListPage(){
         if(query){
             url =`${import.meta.env.VITE_API}${import.meta.env.VITE_SEARCH}?api_key=${import.meta.env.VITE_API_KEY}&query=${query}`
         }else{
-            url  = `${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`
+            url = `${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`
         }
 
         /* fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`)

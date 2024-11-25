@@ -15,4 +15,20 @@
     @apply absolute top-1/2 -translate-y-1/2 bg-slate-900 opacity-100 h-32 w-8 flex items-center justify-center cursor-pointer
   }
 
+  .conta-cards {
+    @apply flex flex-col justify-start items-center bg-gray-800 border-blue-600 rounded-xl p-5 flex-wrap
+  }
+
+  .titulo-conta{
+    @apply font-extrabold text-xl mb-5
+  }
+
+  .btn-saber-mais{
+    @apply px-3 py-2 bg-violet-600 rounded-full text-center font-bold mt-2
+  }
+
+  .detalhes-filme{
+    @apply flex items-center gap-2 font-semibold text-lg
+  }
+
 }

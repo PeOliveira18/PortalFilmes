@@ -12,7 +12,7 @@ export default function MovieListPage(){
     const [searchParams,setSearchParams] = useSearchParams()
     const [movies, setMovies] = useState([])
     const [movieList, setMovieList] = useState([])
-    const [pages, setPages] = useState(1)
+    const [currentPages, setCurrentPage] = useState(1)
     const query = searchParams.get("q")
 
     const getSearchMovies = async (url) => {
@@ -27,7 +27,7 @@ export default function MovieListPage(){
 
     const getMoviesList = async () => {
         try{
-            const res = await fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br&page=${pages}`)
+            const res = await fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br&page=${currentPages}`)
             const data = await res.json()
             setMovieList(data.results)
         }catch (error) {
@@ -41,7 +41,7 @@ export default function MovieListPage(){
         if(query){
             url =`${import.meta.env.VITE_API}${import.meta.env.VITE_SEARCH}?api_key=${import.meta.env.VITE_API_KEY}&query=${query}`
         }else{
-            url = `${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br&page=${pages}`
+            url = `${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br&page=${currentPages}`
         }
 
         fetch(`${import.meta.env.VITE_API}${import.meta.env.VITE_API_MOVIE_POPULAR}?api_key=${import.meta.env.VITE_API_KEY}&language=pt-br`)
@@ -52,8 +52,7 @@ export default function MovieListPage(){
 
         /* const searchWithQuery = `${import.meta.env.VITE_API}${import.meta.env.VITE_SEARCH}?api_key=${import.meta.env.VITE_API_KEY}&query=${query}` */
         getSearchMovies(url)
-        getMoviesList()
-    }, [query,pages])
+    }, [query,currentPages])
 
     const filmesFiltrados = movies.filter((movie) => 
         movie.title || name.toLowerCase().includes(search.toLowerCase())
@@ -66,12 +65,12 @@ export default function MovieListPage(){
     } 
 
     return(
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center">
             <h1 className="font-bold text-3xl mt-4">Veja o catalogo completo de filmes</h1>
             <form onChange={handleSearch} className="my-5">
                 <input type="text" id="search" className="text-black w-[550px] px-3 py-2 rounded-xl" value={search} placeholder="Pesquise um filme..."/>
             </form>
-            <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-32 gap-y-10 px-5">
+            <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-32 gap-y-10 px-5 items-center">
                 {
                     filmesFiltrados.length > 0 ?
                     filmesFiltrados
@@ -83,7 +82,7 @@ export default function MovieListPage(){
                     <p>Filme nao encotrado</p>
                 }
             </section>
-            <Pagination setPages={setPages} pages={pages}/>
+            <Pagination setPages={setCurrentPage} pages={currentPages}/>
         </div>
     )
 }
